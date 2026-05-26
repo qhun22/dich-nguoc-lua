@@ -1,0 +1,15 @@
+_OBJC_CLASS_$_NSBundle
+_OBJC_CLASS_$_NSDictionary
+_OBJC_CLASS_$_NSJSONSerialization
+_OBJC_CLASS_$_NSMutableURLRequest
+_OBJC_CLASS_$_NSObject
+_OBJC_CLASS_$_NSString
+_OBJC_CLASS_$_NSURL
+_OBJC_CLASS_$_NSURLSession
+_OBJC_CLASS_$_NSURLSessionDataTask
+_OBJC_CLASS_$_Syscall
+_OBJC_CLASS_$_UIAlertAction
+_OBJC_CLASS_$_UIAlertController
+_OBJC_CLASS_$_UIApplication
+_OBJC_CLASS_$_UIDevice
+_OBJC_CLASS_$_UIViewController

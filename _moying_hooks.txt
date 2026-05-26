@@ -1,0 +1,12 @@
+?LoadMethodHooked
+?URLSessionDataTaskResumeHooked
+_isLoadMethodHooked
+_isNSMutableURLRequestHooked
+_isNSURLSessionDataTaskResumeHooked
+_isRequestWithURLHooked
+|RequestWithURLHooked
++load method has been hooked! Exiting application for security reasons.
+MutableURLRequestHooked
+NSMutableURLRequest setAllHTTPHeaderFields: has been hooked!
+NSMutableURLRequest setHTTPMethod: has been hooked!
+NSMutableURLRequest setURL: has been hooked!

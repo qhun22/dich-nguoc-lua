@@ -1,0 +1,12 @@
+http://certs.apple.com/wwdrg3.der01
+http://crl.apple.com/root.crl0
+http://ocsp.apple.com/ocsp03-applerootca0.
+http://ocsp.apple.com/ocsp03-wwdrg3010?
+http://www.apple.com/DTDs/PropertyList-1.0.dtd
+https://iosvip555/api/sign/timelock.php
+https://iosvip666/api/sign/timelock.php
+https://iosvip777/api/sign/timelock.php
+https://iosvip888/api/sign/timelock.php
+https://iosvip999/api/sign/timelock.php
+https://www.apple.com/appleca/0??
+https://www.apple.com/certificateauthority/0

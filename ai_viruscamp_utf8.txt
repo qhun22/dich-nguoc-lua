@@ -1,0 +1,1081 @@
+﻿.version	5.1
+
+.format	0
+.endianness	LITTLE
+.int_size	4
+.size_t_size	4
+.instruction_size	4
+.number_format	float	8
+
+.function	main
+
+.source	"@./assets/lua/battle/ai.lua"
+.linedefined	0
+.lastlinedefined	0
+.numparams	0
+.is_vararg	2
+.maxstacksize	11
+
+.local	"ed"	1	38
+.local	"createAiForUnit"	3	38
+.local	"class"	7	38
+.local	"AiCreate"	12	38
+.local	"updateSkillAi"	16	38
+.local	"update"	19	38
+.local	"twoPointDistanceSQ"	21	38
+.local	"searchTarget"	24	38
+.local	"findSkillToCast"	31	38
+.local	"walkTo"	34	38
+
+.constant	k0	"ed"
+.constant	k1	"createAiForUnit"
+.constant	k2	"mt"
+.constant	k3	"Ai"
+.constant	k4	"__index"
+.constant	k5	"create"
+.constant	k6	"AiCreate"
+.constant	k7	"updateSkillAi"
+.constant	k8	"update"
+.constant	k9	"searchTarget"
+.constant	k10	"stMinDisTarget"
+.constant	k11	"findSkillToCast"
+.constant	k12	"walkTo"
+.constant	k13	"findCanAutoCastSkill"
+
+.line	1	lt             0    r0    r0
+.line	4	op57          r1    r0    r0
+.line	4	mul           r0    r0    r0
+.line	5	op54          r0    k1    r1 ; k1 = "createAiForUnit"
+.line	6	op63          r2    r0    r1
+.line	7	op63          r3    r0    r0
+.line	7	op54          r2    k2    r3 ; k2 = "mt"
+.line	9	op54          r0    k3    r2 ; k3 = "Ai"
+.line	10	loadbool      r3     2   258
+.line	10	op54          r3    k4    r2 ; k4 = "__index"
+.line	20	len           r3    r0  c= 1
+.line	20	test          r0     0  b= 2
+.line	21	op54          r2    k5    r3 ; k5 = "create"
+.line	22	op54          r0    k6    r3 ; k6 = "AiCreate"
+.line	36	op57          r4    r0    r2
+.line	36	mul           r0    r0    r0
+.line	37	op54          r2    k7    r4 ; k7 = "updateSkillAi"
+.line	128	op57          r5    r0    r3
+.line	128	mul           r0    r0    r0
+.line	129	op54          r2    k8    r5 ; k8 = "update"
+.line	135	op57          r6    r0    r4
+.line	167	len           r7    r0  c= 5
+.line	167	test          r0     0  b= 6
+.line	167	mul           r0    r0    r0
+.line	168	op54          r2    k9    r7 ; k9 = "searchTarget"
+.line	184	op57          r8    r0    r6
+.line	184	mul           r0    r0    r0
+.line	184	test          r0     0  b= 6
+.line	169	op54          r2   k10    r8 ; k10 = "stMinDisTarget"
+.line	203	len           r8    r0  c= 7
+.line	203	test          r0     0
+.line	204	op54          r2   k11    r8 ; k11 = "findSkillToCast"
+.line	221	op57          r9    r0    r8
+.line	221	mul           r0    r0    r0
+.line	222	op54          r2   k12    r9 ; k12 = "walkTo"
+.line	239	op57         r10    r0    r9
+.line	239	mul           r0    r0    r0
+.line	223	op54          r2   k13   r10 ; k13 = "findCanAutoCastSkill"
+.line	239	call          r0     1     0
+
+.function	main/f0
+
+.source	null
+.linedefined	2
+.lastlinedefined	4
+.numparams	1
+.is_vararg	0
+.maxstacksize	3
+
+.local	"unit"	0	5
+
+.upvalue	"ed"	0	false
+
+.constant	k0	"AiCreate"
+
+.line	3	unm           r1    r0
+.line	3	op61          r1    r1    k0 ; k0 = "AiCreate"
+.line	3	mul           r2    r0    r0
+.line	3	tforloop      r1     0  b= 2
+.line	3	op49          r1    r0    r0
+.line	4	call          r0     1     0
+
+.function	main/f1
+
+.source	null
+.linedefined	11
+.lastlinedefined	20
+.numparams	1
+.is_vararg	0
+.maxstacksize	5
+
+.local	"owner"	0	11
+.local	"self"	5	11
+
+.upvalue	"class"	0	false
+
+.constant	k0	"owner"
+.constant	k1	"destination"
+.constant	k2	nil
+.constant	k3	"target"
+.constant	k4	"will_cast_manual_skill"
+.constant	k5	true
+.constant	k6	"setmetatable"
+.constant	k7	"mt"
+
+.line	12	op63          r1    r0    r4
+.line	13	op54          r1    k0    r0 ; k0 = "owner"
+.line	14	op54          r1    k1    k2 ; k2 = nil
+.line	15	op54          r1    k3    k2 ; k2 = nil
+.line	16	op54          r1    k4    k5 ; k5 = true
+.line	18	lt             2    r0    r6
+.line	18	mul           r3    r1    r0
+.line	18	op50          r4    r0    r0
+.line	18	loadbool      r4     4   263
+.line	18	op56          r2    r3    r1
+.line	19	call          r1     2     0
+.line	20	op49          r0    r1    r0
+
+.function	main/f2
+
+.source	null
+.linedefined	23
+.lastlinedefined	36
+.numparams	2
+.is_vararg	0
+.maxstacksize	8
+
+.local	"self"	0	28
+.local	"dt"	0	28
+.local	"target"	2	28
+.local	"skill"	7	28
+
+.upvalue	"ed"	0	false
+
+.constant	k0	"searchTarget"
+.constant	k1	"target"
+.constant	k2	"findSkillToCast"
+.constant	k3	"info"
+.constant	k4	"Manual"
+.constant	k5	"engine"
+.constant	k6	"arenaMode"
+.constant	k7	"owner"
+.constant	k8	"castManualSkill"
+.constant	k9	"castSkill"
+
+.line	24	setupval      r2    u0 c= 256
+.line	24	op56          r2    r2    r2
+.line	25	pow           r2    r0    r0
+.line	25	setlist       r0   256    23
+.line	26	op54          r0    k1    r2 ; k1 = "target"
+.line	27	forloop       r3 -130813
+.line	27	testset       r3    r2     2
+.line	28	op42          r3    r0    r0
+.line	28	forprep       r0   l29
+.line	29	op61          r4    r3    k3 ; k3 = "info"
+.line	29	loadbool      r4     4   260
+.line	29	pow           r4    r0    r0
+.line	29	forprep       r0   l24
+.line	29	op50          r4    r0    r0
+.line	29	loadbool      r4     4   261
+.line	29	forloop       r4 -128761
+.line	29	testset       r4    r2     2
+.line	29	op42          r4    r0    r0
+.line	29	forprep       r0   l24
+.line	30	op61          r4    r0    k7 ; k7 = "owner"
+.line	30	setupval      r4    u4 c= 264
+.line	30	op56          r4    r2    r1
+.line	30	forprep       r0   l29
+.label	l24
+.line	32	op61          r4    r0    k7 ; k7 = "owner"
+.line	32	setupval      r4    u4 c= 265
+.line	32	test          r6     0  b= 3
+.line	32	mul           r7    r2    r0
+.line	32	op56          r4    r4    r1
+.label	l29
+.line	36	call          r0     1     0
+
+.function	main/f3
+
+.source	null
+.linedefined	38
+.lastlinedefined	128
+.numparams	2
+.is_vararg	0
+.maxstacksize	11
+
+.local	"self"	0	315
+.local	"dt"	0	315
+.local	"target"	12	39
+.local	"skill"	17	38
+.local	"minhp"	50	159
+.local	"owner"	51	159
+.local	"target"	52	159
+.local	"(for generator)"	58	85
+.local	"(for state)"	58	85
+.local	"(for control)"	58	85
+.local	"unit"	59	83
+.local	"skill"	86	159
+.local	"why"	86	159
+.local	"target"	182	236
+.local	"skill"	187	222
+.local	"target"	239	315
+.local	"skill"	240	315
+.local	"why"	240	315
+
+.upvalue	"ed"	0	false
+
+.constant	k0	"owner"
+.constant	k1	"controlledTarget"
+.constant	k2	"engine"
+.constant	k3	"arenaMode"
+.constant	k4	"searchTarget"
+.constant	k5	"target"
+.constant	k6	"findSkillToCast"
+.constant	k7	"info"
+.constant	k8	"Manual"
+.constant	k9	"castManualSkill"
+.constant	k10	"castSkill"
+.constant	k11	99999999
+.constant	k12	"foreachAliveUnit"
+.constant	k13	"foecamp"
+.constant	k14	"buff_effects"
+.constant	k15	"untargetable"
+.constant	k16	"buffManager"
+.constant	k17	"invisible"
+.constant	k18	"camp"
+.constant	k19	"hp"
+.constant	k20	"walkTo"
+.constant	k21	"destination"
+.constant	k22	"idle"
+.constant	k23	"aiMode"
+.constant	k24	"auto_combat"
+.constant	k25	"autoTapBall"
+.constant	k26	"building"
+.constant	k27	"building_notfix"
+
+.line	39	loadbool      r2     0   256
+.line	39	op61          r2    r2    k1 ; k1 = "controlledTarget"
+.line	39	op42          r2    r0    r0
+.line	39	setlist       r0   256    34
+.line	39	unm           r2    r0
+.line	39	op61          r2    r2    k2 ; k2 = "engine"
+.line	39	setupval      r2    u2 c= 259
+.line	39	op56          r2    r2    r2
+.line	39	op42          r2    r0    r1
+.line	39	forprep       r0   l40
+.line	40	forloop       r2 -130811
+.line	40	testset       r2    r2     2
+.line	41	op42          r2    r0    r0
+.line	41	forprep       r0   l39
+.line	42	op54          r0    k5    r2 ; k5 = "target"
+.line	43	setupval      r3    u0 c= 262
+.line	43	op56          r3    r2    r2
+.line	44	pow           r3    r0    r0
+.line	44	setlist       r0   256    18
+.line	45	loadbool      r4     3   263
+.line	45	op61          r4    r4    k8 ; k8 = "Manual"
+.line	45	op42          r4    r0    r0
+.line	45	setlist       r0   256     9
+.line	45	unm           r4    r0
+.line	45	op61          r4    r4    k2 ; k2 = "engine"
+.line	45	setupval      r4    u4 c= 259
+.line	45	op56          r4    r2    r2
+.line	45	pow           r4    r0    r0
+.line	45	setlist       r0   256     3
+.line	46	loadbool      r4     0   256
+.line	46	forloop       r4 -128758
+.line	46	testset       r4    r2     1
+.line	46	setlist       r0   256     4
+.line	48	loadbool      r4     0   256
+.line	48	forloop       r4 -128757
+.line	48	mul           r6    r3    r0
+.line	48	test          r7     0  b= 2
+.line	48	testset       r4    r4     1
+.label	l39
+.line	52	op49          r0    r1    r0
+.label	l40
+.line	54	loadbool      r2     0   256
+.line	54	loadbool      r2     2   257
+.line	54	pow           r2    r0    r0
+.line	54	forprep       r0  l160
+.line	54	op50          r2    r0    r0
+.line	54	loadbool      r2     2   258
+.line	54	forloop       r2 -129788
+.line	54	testset       r2    r2     2
+.line	54	op42          r2    r0    r0
+.line	54	forprep       r0  l160
+.line	55	loadnil       r2    r0 c= 11
+.line	56	loadbool      r3     0   256
+.line	57	not           r4    r4
+.line	58	unm           r5    r0
+.line	58	op61          r5    r5    k2 ; k2 = "engine"
+.line	58	setupval      r5    u5 c= 268
+.line	58	op61          r7    r0    k0 ; k0 = "owner"
+.line	58	loadbool      r7     7   269
+.line	58	op56          r5    r3    r4
+.line	58	forprep       r0   l84
+.line	59	op44          r1    r8    r3
+.line	59	forprep       r0   l84
+.line	59	op61          r9    r8   k14 ; k14 = "buff_effects"
+.line	59	loadbool      r9     9   271
+.line	59	pow           r9    r0    r1
+.line	59	setlist       r0   256    17
+.line	59	loadbool      r9     8   272
+.line	59	op61          r9    r9   k17 ; k17 = "invisible"
+.line	59	op42          r9    r0    r1
+.line	59	forprep       r0   l84
+.line	59	op61          r9    r8    k1 ; k1 = "controlledTarget"
+.line	59	op42          r9    r0    r0
+.line	59	forprep       r0   l79
+.line	59	op61          r9    r8    k1 ; k1 = "controlledTarget"
+.line	59	loadbool      r9     9   274
+.line	59	op61         r10    r0    k0 ; k0 = "owner"
+.line	59	loadbool     r10    10   274
+.line	59	op44          r1    r9   r10
+.line	59	forprep       r0   l84
+.label	l79
+.line	59	op61          r9    r8   k19 ; k19 = "hp"
+.line	59	op41          r0    r9    r2
+.line	59	setlist       r0   256     1
+.line	60	loadbool      r2     8   275
+.line	61	test          r4     0  b= 8
+.label	l84
+.line	58	settable      r5    r0    r1
+.line	62	setlist       r0   255   485
+.line	64	not           r5    r6
+.line	65	op42          r4    r0    r0
+.line	65	forprep       r0  l128
+.line	66	op54          r0    k5    r4 ; k5 = "target"
+.line	67	setupval      r7    u0 c= 262
+.line	67	op56          r7    r2    r3
+.line	67	mul           r6    r8    r0
+.line	67	test          r5     0  b= 7
+.line	68	pow           r5    r0    r0
+.line	68	setlist       r0   256    16
+.line	69	loadbool      r7     5   263
+.line	69	op61          r7    r7    k8 ; k8 = "Manual"
+.line	69	pow           r7    r0    r0
+.line	69	setlist       r0   256     6
+.line	69	unm           r7    r0
+.line	69	op61          r7    r7    k2 ; k2 = "engine"
+.line	69	setupval      r7    u7 c= 259
+.line	69	op56          r7    r2    r2
+.line	69	op42          r7    r0    r0
+.line	69	setlist       r0   256     0
+.line	69	extrabyte  -2146648032
+.line	71	op61          r7    r0    k0 ; k0 = "owner"
+.line	71	setupval      r7    u7 c= 266
+.line	71	test          r9     0  b= 5
+.line	71	mul          r10    r4    r0
+.line	71	op56          r7    r4    r1
+.line	72	forprep       r0  l159
+.line	73	op61          r7    r0    k0 ; k0 = "owner"
+.line	73	op61          r7    r7    k1 ; k1 = "controlledTarget"
+.line	73	op42          r7    r0    r0
+.line	73	forprep       r0  l123
+.line	73	op50          r7    r0    r0
+.line	73	loadbool      r7     7   258
+.line	73	forloop       r7 -127228
+.line	73	testset       r7    r2     2
+.line	73	pow           r7    r0    r0
+.line	73	forprep       r0  l159
+.label	l123
+.line	74	forloop       r7 -130795
+.line	74	mul           r9    r4    r0
+.line	74	test         r10     0  b= 6
+.line	74	testset       r7    r4     1
+.line	75	setlist       r0   256    30
+.label	l128
+.line	76	loadbool      r7     0   277
+.line	76	op42          r7    r0    r0
+.line	76	setlist       r0   256    14
+.line	77	loadbool      r7     0   256
+.line	77	op61          r7    r7    k1 ; k1 = "controlledTarget"
+.line	77	op42          r7    r0    r0
+.line	77	forprep       r0  l141
+.line	77	op50          r7    r0    r0
+.line	77	loadbool      r7     7   258
+.line	77	forloop       r7 -127228
+.line	77	testset       r7    r2     2
+.line	77	op42          r7    r0    r0
+.line	77	forprep       r0  l159
+.label	l141
+.line	78	op61          r7    r0   k20 ; k20 = "walkTo"
+.line	78	loadbool      r8     0   277
+.line	78	test          r9     0  b= 6
+.line	78	testset       r7    r3     1
+.line	79	setlist       r0   256    12
+.line	80	loadbool      r7     0   256
+.line	80	loadbool      r7     7   257
+.line	80	pow           r7    r0    r0
+.line	80	setlist       r0   256     5
+.line	80	unm           r7    r0
+.line	80	op61          r7    r7    k2 ; k2 = "engine"
+.line	80	setupval      r7    u7 c= 259
+.line	80	op56          r7    r2    r2
+.line	80	pow           r7    r0    r0
+.line	80	setlist       r0   256     2
+.line	81	loadbool      r7     0   256
+.line	81	forloop       r7 -127209
+.line	81	testset       r7    r2     1
+.label	l159
+.line	83	op49          r0    r1    r0
+.label	l160
+.line	85	op61          r2    r0    k0 ; k0 = "owner"
+.line	85	loadbool      r2     2   279
+.line	85	pow           r2    r0    r1
+.line	85	forprep       r0  l168
+.line	85	op61          r2    r0    k0 ; k0 = "owner"
+.line	85	loadbool      r2     2   280
+.line	85	pow           r2    r0    r0
+.line	85	forprep       r0  l171
+.label	l168
+.line	86	op61          r2    r0    k0 ; k0 = "owner"
+.line	86	forloop       r2 -129766
+.line	86	testset       r2    r2     1
+.label	l171
+.line	88	op61          r2    r0    k0 ; k0 = "owner"
+.line	88	op61          r2    r2   k14 ; k14 = "buff_effects"
+.line	88	loadbool      r2     2   282
+.line	88	op42          r2    r0    r1
+.line	88	forprep       r0  l181
+.line	88	op61          r2    r0    k0 ; k0 = "owner"
+.line	88	loadbool      r2     2   270
+.line	88	op61          r2    r2   k27 ; k27 = "building_notfix"
+.line	88	op42          r2    r0    r0
+.line	88	setlist       r0   256    56
+.label	l181
+.line	89	setupval      r2    u0 c= 260
+.line	89	testset       r2    r2     2
+.line	90	op42          r2    r0    r0
+.line	90	forprep       r0  l224
+.line	91	op54          r0    k5    r2 ; k5 = "target"
+.line	92	setupval      r3    u0 c= 262
+.line	92	op56          r3    r2    r2
+.line	93	op42          r3    r0    r0
+.line	93	setlist       r0   256    19
+.line	94	loadbool      r4     3   263
+.line	94	op61          r4    r4    k8 ; k8 = "Manual"
+.line	94	op42          r4    r0    r0
+.line	94	setlist       r0   256     9
+.line	94	unm           r4    r0
+.line	94	op61          r4    r4    k2 ; k2 = "engine"
+.line	94	setupval      r4    u4 c= 259
+.line	94	op56          r4    r2    r2
+.line	94	pow           r4    r0    r0
+.line	94	setlist       r0   256     3
+.line	95	loadbool      r4     0   256
+.line	95	forloop       r4 -128758
+.line	95	testset       r4    r2     1
+.line	95	setlist       r0   256   111
+.line	97	loadbool      r4     0   256
+.line	97	forloop       r4 -128757
+.line	97	mul           r6    r3    r0
+.line	97	test          r7     0  b= 2
+.line	97	testset       r4    r4     1
+.line	98	setlist       r0   256   105
+.line	99	loadbool      r4     0   256
+.line	99	loadbool      r4     4   257
+.line	99	pow           r4    r0    r0
+.line	99	setlist       r0   256     5
+.line	99	unm           r4    r0
+.line	99	op61          r4    r4    k2 ; k2 = "engine"
+.line	99	setupval      r4    u4 c= 259
+.line	99	op56          r4    r2    r2
+.line	99	op42          r4    r0    r0
+.line	99	setlist       r0   256    95
+.line	100	loadbool      r4     0   256
+.line	100	forloop       r4 -128745
+.line	100	testset       r4    r2     1
+.line	101	setlist       r0   256    91
+.label	l224
+.line	102	loadbool      r3     0   256
+.line	102	loadbool      r3     3   257
+.line	102	pow           r3    r0    r0
+.line	102	setlist       r0   256     5
+.line	102	unm           r3    r0
+.line	102	op61          r3    r3    k2 ; k2 = "engine"
+.line	102	setupval      r3    u3 c= 259
+.line	102	op56          r3    r2    r2
+.line	102	pow           r3    r0    r0
+.line	102	setlist       r0   256    81
+.line	103	loadbool      r3     0   256
+.line	103	forloop       r3 -129257
+.line	103	testset       r3    r2     1
+.line	104	setlist       r0   256    77
+.line	106	setupval      r2    u0 c= 260
+.line	106	testset       r2    r2     2
+.line	107	not           r3    r4
+.line	108	op42          r2    r0    r0
+.line	108	setlist       r0   256    41
+.line	109	op54          r0    k5    r2 ; k5 = "target"
+.line	110	forloop       r5 -130809
+.line	110	testset       r5    r2     3
+.line	110	test          r4     0  b= 6
+.line	110	mul           r3    r5    r0
+.line	111	pow           r3    r0    r0
+.line	111	forprep       r0  l270
+.line	112	op61          r5    r3    k7 ; k7 = "info"
+.line	112	loadbool      r5     5   264
+.line	112	pow           r5    r0    r0
+.line	112	forprep       r0  l264
+.line	112	op50          r5    r0    r0
+.line	112	loadbool      r5     5   258
+.line	112	forloop       r5 -128252
+.line	112	testset       r5    r2     2
+.line	112	op42          r5    r0    r0
+.line	112	forprep       r0  l264
+.line	113	op61          r5    r0    k0 ; k0 = "owner"
+.line	113	setupval      r5    u5 c= 265
+.line	113	op56          r5    r2    r1
+.line	113	forprep       r0  l316
+.label	l264
+.line	115	op61          r5    r0    k0 ; k0 = "owner"
+.line	115	setupval      r5    u5 c= 266
+.line	115	test          r7     0  b= 3
+.line	115	mul           r8    r2    r0
+.line	115	op56          r5    r4    r1
+.line	116	forprep       r0  l316
+.label	l270
+.line	117	op61          r5    r0    k0 ; k0 = "owner"
+.line	117	op61          r5    r5    k1 ; k1 = "controlledTarget"
+.line	117	op42          r5    r0    r0
+.line	117	forprep       r0  l280
+.line	117	op50          r5    r0    r0
+.line	117	loadbool      r5     5   258
+.line	117	forloop       r5 -128252
+.line	117	testset       r5    r2     2
+.line	117	pow           r5    r0    r0
+.line	117	forprep       r0  l316
+.label	l280
+.line	118	forloop       r5 -130795
+.line	118	mul           r7    r2    r0
+.line	118	test          r8     0  b= 4
+.line	118	testset       r5    r4     1
+.line	119	setlist       r0   256    30
+.line	120	loadbool      r5     0   277
+.line	120	op42          r5    r0    r0
+.line	120	setlist       r0   256    14
+.line	121	loadbool      r5     0   256
+.line	121	op61          r5    r5    k1 ; k1 = "controlledTarget"
+.line	121	op42          r5    r0    r0
+.line	121	forprep       r0  l298
+.line	121	op50          r5    r0    r0
+.line	121	loadbool      r5     5   258
+.line	121	forloop       r5 -128252
+.line	121	testset       r5    r2     2
+.line	121	op42          r5    r0    r0
+.line	121	forprep       r0  l316
+.label	l298
+.line	122	op61          r5    r0   k20 ; k20 = "walkTo"
+.line	122	loadbool      r6     0   277
+.line	122	test          r7     0  b= 4
+.line	122	testset       r5    r3     1
+.line	123	setlist       r0   256    12
+.line	124	loadbool      r5     0   256
+.line	124	loadbool      r5     5   257
+.line	124	pow           r5    r0    r0
+.line	124	setlist       r0   256     5
+.line	124	unm           r5    r0
+.line	124	op61          r5    r5    k2 ; k2 = "engine"
+.line	124	setupval      r5    u5 c= 259
+.line	124	op56          r5    r2    r2
+.line	124	pow           r5    r0    r0
+.line	124	setlist       r0   256     2
+.line	125	loadbool      r5     0   256
+.line	125	forloop       r5 -128233
+.line	125	testset       r5    r2     1
+.label	l316
+.line	128	op49          r0    r1    r0
+
+.function	main/f4
+
+.source	null
+.linedefined	130
+.lastlinedefined	135
+.numparams	2
+.is_vararg	0
+.maxstacksize	6
+
+.local	"p0"	0	10
+.local	"p1"	0	10
+.local	"x"	3	10
+.local	"y"	6	10
+.local	"distanceSQ"	9	10
+
+.constant	k0	1
+.constant	k1	2
+
+.line	131	loadbool      r2     0   256
+.line	131	op61          r3    r1    k0 ; k0 = 1
+.line	131	add           r2    r2    r3
+.line	132	op61          r3    r0    k1 ; k1 = 2
+.line	132	loadbool      r4     1   257
+.line	132	op39          r3    r3    r4
+.line	133	mod           r4    r2    r2
+.line	133	mod           r5    r3    r3
+.line	133	move          r4    r4  c= 5
+.line	134	op49          r4    r2    r0
+.line	135	call          r0     1     0
+
+.function	main/f5
+
+.source	null
+.linedefined	136
+.lastlinedefined	167
+.numparams	1
+.is_vararg	0
+.maxstacksize	11
+
+.local	"self"	0	80
+.local	"owner"	1	80
+.local	"(for generator)"	31	46
+.local	"(for state)"	31	46
+.local	"(for control)"	31	46
+.local	"unit"	32	44
+.local	"target"	48	80
+.local	"minDistanSQ"	48	80
+.local	"ft"	50	80
+.local	"mdst"	50	80
+.local	"flst"	51	80
+.local	"rect_cut"	54	80
+
+.upvalue	"twoPointDistanceSQ"	0	false
+.upvalue	"ed"	0	false
+
+.constant	k0	"owner"
+.constant	k1	"taunter"
+.constant	k2	"position"
+.constant	k3	"detaunter"
+.constant	k4	"buff_effects"
+.constant	k5	"derangedOwner"
+.constant	k6	"engine"
+.constant	k7	"foreachAliveUnit"
+.constant	k8	"foecamp"
+.constant	k9	"derangedTarget"
+.constant	k10	"stMinDisTarget"
+.constant	k11	"rect_cut"
+.constant	k12	"isEmpty"
+.constant	k13	"checkSameArea"
+.constant	k14	"tid"
+.constant	k15	true
+
+.line	137	loadbool      r1     0   256
+.line	138	op61          r2    r1    k1 ; k1 = "taunter"
+.line	138	pow           r2    r0    r0
+.line	138	setlist       r0   256     6
+.line	139	loadbool      r2     1   257
+.line	139	op50          r3    r0    r0
+.line	139	loadbool      r4     1   258
+.line	139	op61          r5    r1    k1 ; k1 = "taunter"
+.line	139	loadbool      r5     5   258
+.line	139	op56          r3    r3    r0
+.line	139	call          r2     0     0
+.line	141	op61          r2    r1    k3 ; k3 = "detaunter"
+.line	141	op42          r2    r0    r0
+.line	141	forprep       r0   l22
+.line	142	op61          r2    r1    k3 ; k3 = "detaunter"
+.line	142	unm           r3    r0
+.line	142	op61          r4    r1    k2 ; k2 = "position"
+.line	142	loadbool      r5     1   259
+.line	142	op61          r5    r5    k2 ; k2 = "position"
+.line	142	testset       r3    r3     0
+.line	142	op49          r2    r0    r0
+.label	l22
+.line	144	loadbool      r2     1   260
+.line	144	loadbool      r2     2   261
+.line	144	pow           r2    r0    r0
+.line	144	forprep       r0   l47
+.line	145	op50          r2    r1    r0
+.line	145	loadbool      r2     2   262
+.line	145	forloop       r2 -129784
+.line	145	loadbool      r4     0   256
+.line	145	op61          r4    r4    k8 ; k8 = "foecamp"
+.line	145	testset       r2    r3     4
+.line	145	setlist       r0   256    11
+.label	l33
+.line	146	getglobal     r1 k2561 ; k2561 out of range
+.line	146	setlist       r0   256     9
+.line	146	loadbool      r6     5   260
+.line	146	op61          r6    r6    k9 ; k9 = "derangedTarget"
+.line	146	op42          r6    r0    r0
+.line	146	setlist       r0   256     5
+.line	147	mul           r6    r5    r0
+.line	147	op50          r7    r0    r0
+.line	147	loadbool      r8     1   258
+.line	147	op61          r9    r5    k2 ; k2 = "position"
+.line	147	testset       r7    r3     0
+.line	147	op49          r6    r0    r0
+.line	145	settable      r2    r0    r1
+.line	148	forprep       r0   l33
+.label	l47
+.line	151	forloop       r2 -130805
+.line	151	op56          r2    r2    r3
+.line	152	mul           r4    r2    r0
+.line	152	test          r5     0  b= 3
+.line	153	op63          r6    r0    r0
+.line	154	op50          r7    r1    r0
+.line	154	loadbool      r7     7   262
+.line	154	op61          r7    r7   k11 ; k11 = "rect_cut"
+.line	155	loadbool      r8     7   268
+.line	155	op56          r8    r1    r2
+.line	155	op42          r8    r0    r1
+.line	155	forprep       r0   l78
+.line	156	op61          r8    r7   k13 ; k13 = "checkSameArea"
+.line	156	mul           r9    r1    r0
+.line	156	test         r10     0  b= 2
+.line	156	testset       r8    r3     2
+.line	156	pow           r8    r0    r1
+.line	156	setlist       r0   256    12
+.line	157	loadbool      r8     2   270
+.line	157	op54          r6    r8   k15 ; k15 = true
+.line	158	setupval      r8    u0 c= 266
+.line	158	test         r10     0  b= 6
+.line	158	testset       r8    r3     3
+.line	158	test          r3     0  b= 9
+.line	158	mul           r2    r8    r0
+.line	159	pow           r2    r0    r1
+.line	159	setlist       r0   255   496
+.line	160	mul           r2    r4    r0
+.line	161	test          r5     0  b= 3
+.line	162	forprep       r0   l78
+.line	163	setlist       r0   255   492
+.label	l78
+.line	166	mul           r8    r2    r0
+.line	166	test          r9     0  b= 3
+.line	166	call          r8     3     0
+.line	167	op49          r0    r1    r0
+
+.function	main/f6
+
+.source	null
+.linedefined	169
+.lastlinedefined	184
+.numparams	2
+.is_vararg	0
+.maxstacksize	12
+
+.local	"self"	0	51
+.local	"ftList"	0	51
+.local	"owner"	5	51
+.local	"minDistanSQ"	7	51
+.local	"target"	8	51
+.local	"(for generator)"	14	48
+.local	"(for state)"	14	48
+.local	"(for control)"	14	48
+.local	"unit"	15	46
+.local	"distanceSQ"	38	46
+
+.upvalue	"ed"	0	false
+.upvalue	"twoPointDistanceSQ"	0	false
+
+.constant	k0	"owner"
+.constant	k1	"math"
+.constant	k2	"huge"
+.constant	k3	"engine"
+.constant	k4	"foreachAliveUnit"
+.constant	k5	"foecamp"
+.constant	k6	"buff_effects"
+.constant	k7	"untargetable"
+.constant	k8	"buffManager"
+.constant	k9	"invisible"
+.constant	k10	"controlledTarget"
+.constant	k11	"camp"
+.constant	k12	"position"
+.constant	k13	"tid"
+
+.line	170	pow           r1    r0    r1
+.line	170	setlist       r0   256     1
+.line	170	op63          r2    r0    r0
+.line	170	test          r1     0  b= 2
+.line	171	op61          r2    r0    k0 ; k0 = "owner"
+.line	172	sub           r3    r0    r1
+.line	172	op61          r3    r3    k2 ; k2 = "huge"
+.line	173	not           r4    r4
+.line	174	op50          r5    r0    r0
+.line	174	loadbool      r5     5   259
+.line	174	forloop       r5 -128251
+.line	174	loadbool      r7     0   256
+.line	174	op61          r7    r7    k5 ; k5 = "foecamp"
+.line	174	testset       r5    r3     4
+.line	174	setlist       r0   256    30
+.label	l16
+.line	175	getglobal     r1 k4098 ; k4098 out of range
+.line	175	setlist       r0   256    28
+.line	175	loadbool      r9     8   262
+.line	175	op61          r9    r9    k7 ; k7 = "untargetable"
+.line	175	op42          r9    r0    r1
+.line	175	forprep       r0   l47
+.line	175	op61          r9    r8    k8 ; k8 = "buffManager"
+.line	175	loadbool      r9     9   265
+.line	175	pow           r9    r0    r1
+.line	175	setlist       r0   256    20
+.line	175	loadbool      r9     8   266
+.line	175	pow           r9    r0    r0
+.line	175	setlist       r0   256     5
+.line	175	loadbool      r9     8   266
+.line	175	op61          r9    r9   k11 ; k11 = "camp"
+.line	175	loadbool     r10     0   256
+.line	175	op61         r10   r10   k11 ; k11 = "camp"
+.line	175	getglobal     r1 k4618 ; k4618 out of range
+.line	175	setlist       r0   256    11
+.line	176	unm           r9    r1
+.line	176	op61         r10    r2   k12 ; k12 = "position"
+.line	176	loadbool     r11     8   268
+.line	176	op56          r9    r3    r2
+.line	177	op41          r0    r9    r3
+.line	177	setlist       r0   256     5
+.line	177	loadbool     r10     8   269
+.line	177	op61         r10    r1   r10
+.line	177	op42         r10    r0    r1
+.line	177	forprep       r0   l47
+.line	178	test          r3     0  b= 9
+.line	179	mul           r4    r8    r0
+.label	l47
+.line	174	settable      r5    r0    r1
+.line	181	forprep       r0   l16
+.line	183	test          r5     0  b= 4
+.line	183	mul           r6    r3    r0
+.line	183	op49          r5    r3    r0
+.line	184	call          r0     1     0
+
+.function	main/f7
+
+.source	null
+.linedefined	185
+.lastlinedefined	203
+.numparams	1
+.is_vararg	0
+.maxstacksize	12
+
+.local	"self"	0	42
+.local	"resWhy"	7	42
+.local	"list"	9	42
+.local	"(for index)"	12	39
+.local	"(for limit)"	12	39
+.local	"(for step)"	12	39
+.local	"i"	13	38
+.local	"skill"	14	38
+.local	"res"	17	38
+.local	"why"	17	38
+
+.upvalue	"ed"	0	false
+
+.constant	k0	"owner"
+.constant	k1	"global_cd"
+.constant	k2	0
+.constant	k3	"skill_list"
+.constant	k4	1
+.constant	k5	"findCanAutoCastSkill"
+.constant	k6	"out of attack range"
+.constant	k7	"controlledTarget"
+.constant	k8	"engine"
+.constant	k9	"arenaMode"
+.constant	k10	"info"
+.constant	k11	"Manual"
+
+.line	186	op61          r1    r0    k0 ; k0 = "owner"
+.line	186	loadbool      r1     1   257
+.line	186	op51          r0    k2    r1 ; k2 = 0
+.line	186	forprep       r0    l7
+.line	187	not           r1    r1
+.line	187	call          r1     2     0
+.label	l7
+.line	189	not           r1    r1
+.line	190	loadbool      r2     0   256
+.line	190	op61          r2    r2    k3 ; k3 = "skill_list"
+.line	191	loadk         r3    k4 ; k4 = 1
+.line	191	gettable      r4    r2    r0
+.line	191	loadk         r5    k4 ; k4 = 1
+.line	191	op55          r3    k0   r24 ; k0 = "owner"
+.line	192	loadbool      r7     2     6
+.line	193	forloop       r8 -130810
+.line	193	mul          r10    r7    r0
+.line	193	op56          r8    r3    r3
+.line	194	getglobal     r0 k4870 ; k4870 out of range
+.line	194	setlist       r0   256     0
+.line	195	extrabyte  75497550
+.line	197	op61         r10    r0    k0 ; k0 = "owner"
+.line	197	loadbool     r10    10   263
+.line	197	op42         r10    r0    r0
+.line	197	forprep       r0   l36
+.line	197	op50         r10    r0    r0
+.line	197	loadbool     r10    10   264
+.line	197	forloop      r10 -125686
+.line	197	testset      r10    r2     2
+.line	197	pow          r10    r0    r0
+.line	197	forprep       r0   l36
+.line	197	op61         r10    r7   k10 ; k10 = "info"
+.line	197	loadbool     r10    10   267
+.line	197	op42         r10    r0    r0
+.line	197	forprep       r0   l36
+.line	197	setlist       r0   256     2
+.label	l36
+.line	198	op42          r8    r0    r0
+.line	198	forprep       r0   l39
+.line	199	op49          r7    r2    r0
+.label	l39
+.line	191	div           r3  r255  k229 ; k229 out of range
+.line	202	not           r3    r3
+.line	202	test          r4     0  b= 1
+.line	202	call          r3     3     0
+.line	203	op49          r0    r1    r0
+
+.function	main/f8
+
+.source	null
+.linedefined	205
+.lastlinedefined	221
+.numparams	3
+.is_vararg	0
+.maxstacksize	8
+
+.local	"self"	0	38
+.local	"dest"	0	38
+.local	"why"	0	38
+.local	"owner"	5	38
+.local	"distanceSQ"	10	38
+
+.upvalue	"ed"	0	false
+
+.constant	k0	"position"
+.constant	k1	"owner"
+.constant	k2	"edpDistanceSQ"
+.constant	k3	"attack_range"
+.constant	k4	2
+.constant	k5	"isOutOfStage"
+.constant	k6	"quartercircleList"
+.constant	k7	0
+.constant	k8	"out of attack range"
+.constant	k9	"walkTowards"
+.constant	k10	"idle"
+
+.line	206	op61          r3    r1    k0 ; k0 = "position"
+.line	206	pow           r3    r0    r0
+.line	206	setlist       r0   256     0
+.line	207	extrabyte  12582978
+.line	209	op61          r3    r0    k1 ; k1 = "owner"
+.line	210	op50          r4    r0    r0
+.line	210	loadbool      r4     4   258
+.line	210	test          r5     0  b= 1
+.line	210	loadbool      r6     3   256
+.line	210	op56          r4    r3    r2
+.line	211	loadbool      r5     3   259
+.line	211	closure       r5 f2820
+.line	211	self          r0    r4    r5
+.line	211	setlist       r0   256    20
+.line	211	setupval      r5    u3 c= 261
+.line	211	op56          r5    r2    r2
+.line	211	pow           r5    r0    r0
+.line	211	setlist       r0   256     0
+.line	211	extrabyte  -2147237856
+.line	213	op61          r5    r3    k6 ; k6 = "quartercircleList"
+.line	213	pow           r5    r0    r1
+.line	213	forprep       r0   l24
+.line	213	op63          r5    r0    r0
+.label	l24
+.line	213	gettable      r5    r5    r0
+.line	213	op41          r0    k7    r5 ; k7 = 0
+.line	213	setlist       r0   256     5
+.line	213	getglobal     r0 k1288 ; k1288 out of range
+.line	213	setlist       r0   256     3
+.line	214	setupval      r5    u3 c= 265
+.line	214	test          r7     0  b= 1
+.line	214	testset       r5    r3     1
+.line	215	op49          r0    r1    r0
+.line	217	setupval      r5    u3 c= 266
+.line	217	op56          r5    r2    r1
+.line	218	call          r0     1     0
+.line	220	forloop       r5 -129270
+.line	220	mul           r7    r1    r0
+.line	220	op56          r5    r3    r1
+.line	221	call          r0     1     0
+
+.function	main/f9
+
+.source	null
+.linedefined	223
+.lastlinedefined	239
+.numparams	2
+.is_vararg	0
+.maxstacksize	7
+
+.local	"self"	0	47
+.local	"skill"	0	47
+.local	"reswhy"	19	47
+.local	"cast"	33	44
+.local	"why"	33	44
+
+.upvalue	"ed"	0	false
+
+.constant	k0	"engine"
+.constant	k1	"manualBtMode"
+.constant	k2	"owner"
+.constant	k3	"camp"
+.constant	k4	"emCampPlayer"
+.constant	k5	"info"
+.constant	k6	"Atk Manual"
+.constant	k7	"is_update"
+.constant	k8	"will_cast_manual_skill"
+.constant	k9	"Manual"
+.constant	k10	"canCastWithTarget"
+.constant	k11	"target"
+.constant	k12	"out of attack range"
+.constant	k13	"willCast"
+
+.line	225	unm           r2    r0
+.line	225	op61          r2    r2    k0 ; k0 = "engine"
+.line	225	setupval      r2    u2 c= 257
+.line	225	op56          r2    r2    r2
+.line	225	op42          r2    r0    r0
+.line	225	setlist       r0   256    11
+.line	225	loadbool      r2     0   258
+.line	225	op61          r2    r2    k3 ; k3 = "camp"
+.line	225	unm           r3    r0
+.line	225	op61          r3    r3    k4 ; k4 = "emCampPlayer"
+.line	225	getglobal     r0 k1027 ; k1027 out of range
+.line	225	setlist       r0   256     5
+.line	225	loadbool      r2     1   261
+.line	225	op61          r2    r2    k6 ; k6 = "Atk Manual"
+.line	225	pow           r2    r0    r0
+.line	225	setlist       r0   256     1
+.line	226	vararg        r2     0
+.line	226	op49          r2    r2    r0
+.line	228	not           r2    r2
+.line	229	op61          r3    r1    k7 ; k7 = "is_update"
+.line	229	op42          r3    r0    r0
+.line	229	setlist       r0   256    21
+.line	229	loadbool      r3     0   264
+.line	229	op42          r3    r0    r1
+.line	229	forprep       r0   l30
+.line	229	op61          r3    r1    k5 ; k5 = "info"
+.line	229	loadbool      r3     3   265
+.line	229	pow           r3    r0    r1
+.line	229	setlist       r0   256    14
+.label	l30
+.line	230	setupval      r3    u1 c= 266
+.line	230	loadbool      r5     0   267
+.line	230	op40          r6    r1    r0
+.line	230	testset       r3    r4     3
+.line	231	op44          r0    r4   k12 ; k12 = "out of attack range"
+.line	231	forprep       r0   l37
+.line	232	test          r2     0  b= 4
+.label	l37
+.line	234	op42          r3    r0    r0
+.line	234	setlist       r0   256     5
+.line	234	setupval      r5    u1 c= 269
+.line	234	op56          r5    r2    r2
+.line	234	pow           r5    r0    r0
+.line	234	setlist       r0   256     1
+.line	235	vararg        r5     1
+.line	235	op49          r5    r2    r0
+.line	238	vararg        r3     0
+.line	238	mul           r4    r2    r0
+.line	238	op49          r3    r3    r0
+.line	239	call          r0     1     0
+

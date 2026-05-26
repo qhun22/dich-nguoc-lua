@@ -1,0 +1,785 @@
+# ==========================================
+# Bot Algorithm Decompiled (Pseudo-Lua)
+# ==========================================
+
+
+function main()
+    -- local variable ed defined
+    -- local variable createAiForUnit defined
+    -- local variable class defined
+    -- local variable AiCreate defined
+    -- local variable updateSkillAi defined
+    -- local variable update defined
+    -- local variable twoPointDistanceSQ defined
+    -- local variable searchTarget defined
+    -- local variable findSkillToCast defined
+    -- local variable walkTo defined
+    -- [Line 1] if not (r0 < r0) then skip next
+    -- [Line 4] op57 r1, r0, r0
+    -- [Line 4] r0 = r0 * r0
+    -- [Line 5] r0["createAiForUnit"] = r1
+    -- [Line 6] op63 r2, r0, r1
+    -- [Line 7] op63 r3, r0, r0
+    -- [Line 7] r2["mt"] = r3
+    -- [Line 9] r0["Ai"] = r2
+    -- [Line 10] r3 = true ; skip next
+    -- [Line 10] r3["__index"] = r2
+    -- [Line 20] r3 = #r0
+    -- [Line 20] if not r0 then skip next
+    -- [Line 21] r2["create"] = r3
+    -- [Line 22] r0["AiCreate"] = r3
+    -- [Line 36] op57 r4, r0, r2
+    -- [Line 36] r0 = r0 * r0
+    -- [Line 37] r2["updateSkillAi"] = r4
+    -- [Line 128] op57 r5, r0, r3
+    -- [Line 128] r0 = r0 * r0
+    -- [Line 129] r2["update"] = r5
+    -- [Line 135] op57 r6, r0, r4
+    -- [Line 167] r7 = #r0
+    -- [Line 167] if not r0 then skip next
+    -- [Line 167] r0 = r0 * r0
+    -- [Line 168] r2["searchTarget"] = r7
+    -- [Line 184] op57 r8, r0, r6
+    -- [Line 184] r0 = r0 * r0
+    -- [Line 184] if not r0 then skip next
+    -- [Line 169] r2["stMinDisTarget"] = r8
+    -- [Line 203] r8 = #r0
+    -- [Line 203] if not r0 then skip next
+    -- [Line 204] r2["findSkillToCast"] = r8
+    -- [Line 221] op57 r9, r0, r8
+    -- [Line 221] r0 = r0 * r0
+    -- [Line 222] r2["walkTo"] = r9
+    -- [Line 239] op57 r10, r0, r9
+    -- [Line 239] r0 = r0 * r0
+    -- [Line 223] r2["findCanAutoCastSkill"] = r10
+    -- [Line 239] CALL r0 (args: 0, returns: var)
+
+function main/f0()
+    -- local variable unit defined
+    -- [Line 3] r1 = -r0
+    -- [Line 3] r1 = r1["AiCreate"]
+    -- [Line 3] r2 = r0 * r0
+    -- [Line 3] tforloop r1, 0, b=, 2
+    -- [Line 3] op49 r1, r0, r0
+    -- [Line 4] CALL r0 (args: 0, returns: var)
+
+function main/f1()
+    -- local variable owner defined
+    -- local variable self defined
+    -- [Line 12] op63 r1, r0, r4
+    -- [Line 13] r1["owner"] = r0
+    -- [Line 14] r1["destination"] = "nil"
+    -- [Line 15] r1["target"] = "nil"
+    -- [Line 16] r1["will_cast_manual_skill"] = True
+    -- [Line 18] if not (r0 < r6) then skip next
+    -- [Line 18] r3 = r1 * r0
+    -- [Line 18] if not r4 then skip next
+    -- [Line 18] r4 = true ; skip next
+    -- [Line 18] r2 = r3[r1]
+    -- [Line 19] CALL r1 (args: 1, returns: var)
+    -- [Line 20] op49 r0, r1, r0
+
+function main/f2()
+    -- local variable self defined
+    -- local variable dt defined
+    -- local variable target defined
+    -- local variable skill defined
+    -- [Line 24] UPVAL(u0) = r2
+    -- [Line 24] r2 = r2[r2]
+    -- [Line 25] r2 = r0 ^ r0
+    -- [Line 25] goto offset 256
+    -- [Line 26] r0["target"] = r2
+    -- [Line 27] FOR loop step r3, goto -130813
+    -- [Line 27] if r2 then r3 = r2 else skip next
+    -- [Line 28] r3 = r0[r0]
+    -- [Line 28] FOR loop init r0, goto l29
+    -- [Line 29] r4 = r3["info"]
+    -- [Line 29] r4 = true ; skip next
+    -- [Line 29] r4 = r0 ^ r0
+    -- [Line 29] FOR loop init r0, goto l24
+    -- [Line 29] if not r4 then skip next
+    -- [Line 29] r4 = true ; skip next
+    -- [Line 29] FOR loop step r4, goto -128761
+    -- [Line 29] if r2 then r4 = r2 else skip next
+    -- [Line 29] r4 = r0[r0]
+    -- [Line 29] FOR loop init r0, goto l24
+    -- [Line 30] r4 = r0["owner"]
+    -- [Line 30] UPVAL(u4) = r4
+    -- [Line 30] r4 = r2[r1]
+    -- [Line 30] FOR loop init r0, goto l29
+    -- [Line 32] r4 = r0["owner"]
+    -- [Line 32] UPVAL(u4) = r4
+    -- [Line 32] if not r6 then skip next
+    -- [Line 32] r7 = r2 * r0
+    -- [Line 32] r4 = r4[r1]
+    -- [Line 36] CALL r0 (args: 0, returns: var)
+
+function main/f3()
+    -- local variable self defined
+    -- local variable dt defined
+    -- local variable target defined
+    -- local variable skill defined
+    -- local variable minhp defined
+    -- local variable owner defined
+    -- local variable target defined
+    -- local variable (for generator) defined
+    -- local variable (for state) defined
+    -- local variable (for control) defined
+    -- local variable unit defined
+    -- local variable skill defined
+    -- local variable why defined
+    -- local variable target defined
+    -- local variable skill defined
+    -- local variable target defined
+    -- local variable skill defined
+    -- local variable why defined
+    -- [Line 39] r2 = false ; skip next
+    -- [Line 39] r2 = r2["controlledTarget"]
+    -- [Line 39] r2 = r0[r0]
+    -- [Line 39] goto offset 256
+    -- [Line 39] r2 = -r0
+    -- [Line 39] r2 = r2["engine"]
+    -- [Line 39] UPVAL(u2) = r2
+    -- [Line 39] r2 = r2[r2]
+    -- [Line 39] r2 = r0[r1]
+    -- [Line 39] FOR loop init r0, goto l40
+    -- [Line 40] FOR loop step r2, goto -130811
+    -- [Line 40] if r2 then r2 = r2 else skip next
+    -- [Line 41] r2 = r0[r0]
+    -- [Line 41] FOR loop init r0, goto l39
+    -- [Line 42] r0["target"] = r2
+    -- [Line 43] UPVAL(u0) = r3
+    -- [Line 43] r3 = r2[r2]
+    -- [Line 44] r3 = r0 ^ r0
+    -- [Line 44] goto offset 256
+    -- [Line 45] r4 = true ; skip next
+    -- [Line 45] r4 = r4["Manual"]
+    -- [Line 45] r4 = r0[r0]
+    -- [Line 45] goto offset 256
+    -- [Line 45] r4 = -r0
+    -- [Line 45] r4 = r4["engine"]
+    -- [Line 45] UPVAL(u4) = r4
+    -- [Line 45] r4 = r2[r2]
+    -- [Line 45] r4 = r0 ^ r0
+    -- [Line 45] goto offset 256
+    -- [Line 46] r4 = false ; skip next
+    -- [Line 46] FOR loop step r4, goto -128758
+    -- [Line 46] if r2 then r4 = r2 else skip next
+    -- [Line 46] goto offset 256
+    -- [Line 48] r4 = false ; skip next
+    -- [Line 48] FOR loop step r4, goto -128757
+    -- [Line 48] r6 = r3 * r0
+    -- [Line 48] if not r7 then skip next
+    -- [Line 48] if r4 then r4 = r4 else skip next
+    -- [Line 52] op49 r0, r1, r0
+    -- [Line 54] r2 = false ; skip next
+    -- [Line 54] r2 = true ; skip next
+    -- [Line 54] r2 = r0 ^ r0
+    -- [Line 54] FOR loop init r0, goto l160
+    -- [Line 54] if not r2 then skip next
+    -- [Line 54] r2 = true ; skip next
+    -- [Line 54] FOR loop step r2, goto -129788
+    -- [Line 54] if r2 then r2 = r2 else skip next
+    -- [Line 54] r2 = r0[r0]
+    -- [Line 54] FOR loop init r0, goto l160
+    -- [Line 55] Registers r2..r0 = nil
+    -- [Line 56] r3 = false ; skip next
+    -- [Line 57] r4 = not r4
+    -- [Line 58] r5 = -r0
+    -- [Line 58] r5 = r5["engine"]
+    -- [Line 58] UPVAL(u5) = r5
+    -- [Line 58] r7 = r0["owner"]
+    -- [Line 58] r7 = true ; skip next
+    -- [Line 58] r5 = r3[r4]
+    -- [Line 58] FOR loop init r0, goto l84
+    -- [Line 59] op44 r1, r8, r3
+    -- [Line 59] FOR loop init r0, goto l84
+    -- [Line 59] r9 = r8["buff_effects"]
+    -- [Line 59] r9 = true ; skip next
+    -- [Line 59] r9 = r0 ^ r1
+    -- [Line 59] goto offset 256
+    -- [Line 59] r9 = true ; skip next
+    -- [Line 59] r9 = r9["invisible"]
+    -- [Line 59] r9 = r0[r1]
+    -- [Line 59] FOR loop init r0, goto l84
+    -- [Line 59] r9 = r8["controlledTarget"]
+    -- [Line 59] r9 = r0[r0]
+    -- [Line 59] FOR loop init r0, goto l79
+    -- [Line 59] r9 = r8["controlledTarget"]
+    -- [Line 59] r9 = true ; skip next
+    -- [Line 59] r10 = r0["owner"]
+    -- [Line 59] r10 = true ; skip next
+    -- [Line 59] op44 r1, r9, r10
+    -- [Line 59] FOR loop init r0, goto l84
+    -- [Line 59] r9 = r8["hp"]
+    -- [Line 59] op41 r0, r9, r2
+    -- [Line 59] goto offset 256
+    -- [Line 60] r2 = true ; skip next
+    -- [Line 61] if not r4 then skip next
+    -- [Line 58] settable r5, r0, r1
+    -- [Line 62] goto offset 255
+    -- [Line 64] r5 = not r6
+    -- [Line 65] r4 = r0[r0]
+    -- [Line 65] FOR loop init r0, goto l128
+    -- [Line 66] r0["target"] = r4
+    -- [Line 67] UPVAL(u0) = r7
+    -- [Line 67] r7 = r2[r3]
+    -- [Line 67] r6 = r8 * r0
+    -- [Line 67] if not r5 then skip next
+    -- [Line 68] r5 = r0 ^ r0
+    -- [Line 68] goto offset 256
+    -- [Line 69] r7 = true ; skip next
+    -- [Line 69] r7 = r7["Manual"]
+    -- [Line 69] r7 = r0 ^ r0
+    -- [Line 69] goto offset 256
+    -- [Line 69] r7 = -r0
+    -- [Line 69] r7 = r7["engine"]
+    -- [Line 69] UPVAL(u7) = r7
+    -- [Line 69] r7 = r2[r2]
+    -- [Line 69] r7 = r0[r0]
+    -- [Line 69] goto offset 256
+    -- [Line 69] extrabyte -2146648032
+    -- [Line 71] r7 = r0["owner"]
+    -- [Line 71] UPVAL(u7) = r7
+    -- [Line 71] if not r9 then skip next
+    -- [Line 71] r10 = r4 * r0
+    -- [Line 71] r7 = r4[r1]
+    -- [Line 72] FOR loop init r0, goto l159
+    -- [Line 73] r7 = r0["owner"]
+    -- [Line 73] r7 = r7["controlledTarget"]
+    -- [Line 73] r7 = r0[r0]
+    -- [Line 73] FOR loop init r0, goto l123
+    -- [Line 73] if not r7 then skip next
+    -- [Line 73] r7 = true ; skip next
+    -- [Line 73] FOR loop step r7, goto -127228
+    -- [Line 73] if r2 then r7 = r2 else skip next
+    -- [Line 73] r7 = r0 ^ r0
+    -- [Line 73] FOR loop init r0, goto l159
+    -- [Line 74] FOR loop step r7, goto -130795
+    -- [Line 74] r9 = r4 * r0
+    -- [Line 74] if not r10 then skip next
+    -- [Line 74] if r4 then r7 = r4 else skip next
+    -- [Line 75] goto offset 256
+    -- [Line 76] r7 = false ; skip next
+    -- [Line 76] r7 = r0[r0]
+    -- [Line 76] goto offset 256
+    -- [Line 77] r7 = false ; skip next
+    -- [Line 77] r7 = r7["controlledTarget"]
+    -- [Line 77] r7 = r0[r0]
+    -- [Line 77] FOR loop init r0, goto l141
+    -- [Line 77] if not r7 then skip next
+    -- [Line 77] r7 = true ; skip next
+    -- [Line 77] FOR loop step r7, goto -127228
+    -- [Line 77] if r2 then r7 = r2 else skip next
+    -- [Line 77] r7 = r0[r0]
+    -- [Line 77] FOR loop init r0, goto l159
+    -- [Line 78] r7 = r0["walkTo"]
+    -- [Line 78] r8 = false ; skip next
+    -- [Line 78] if not r9 then skip next
+    -- [Line 78] if r3 then r7 = r3 else skip next
+    -- [Line 79] goto offset 256
+    -- [Line 80] r7 = false ; skip next
+    -- [Line 80] r7 = true ; skip next
+    -- [Line 80] r7 = r0 ^ r0
+    -- [Line 80] goto offset 256
+    -- [Line 80] r7 = -r0
+    -- [Line 80] r7 = r7["engine"]
+    -- [Line 80] UPVAL(u7) = r7
+    -- [Line 80] r7 = r2[r2]
+    -- [Line 80] r7 = r0 ^ r0
+    -- [Line 80] goto offset 256
+    -- [Line 81] r7 = false ; skip next
+    -- [Line 81] FOR loop step r7, goto -127209
+    -- [Line 81] if r2 then r7 = r2 else skip next
+    -- [Line 83] op49 r0, r1, r0
+    -- [Line 85] r2 = r0["owner"]
+    -- [Line 85] r2 = true ; skip next
+    -- [Line 85] r2 = r0 ^ r1
+    -- [Line 85] FOR loop init r0, goto l168
+    -- [Line 85] r2 = r0["owner"]
+    -- [Line 85] r2 = true ; skip next
+    -- [Line 85] r2 = r0 ^ r0
+    -- [Line 85] FOR loop init r0, goto l171
+    -- [Line 86] r2 = r0["owner"]
+    -- [Line 86] FOR loop step r2, goto -129766
+    -- [Line 86] if r2 then r2 = r2 else skip next
+    -- [Line 88] r2 = r0["owner"]
+    -- [Line 88] r2 = r2["buff_effects"]
+    -- [Line 88] r2 = true ; skip next
+    -- [Line 88] r2 = r0[r1]
+    -- [Line 88] FOR loop init r0, goto l181
+    -- [Line 88] r2 = r0["owner"]
+    -- [Line 88] r2 = true ; skip next
+    -- [Line 88] r2 = r2["building_notfix"]
+    -- [Line 88] r2 = r0[r0]
+    -- [Line 88] goto offset 256
+    -- [Line 89] UPVAL(u0) = r2
+    -- [Line 89] if r2 then r2 = r2 else skip next
+    -- [Line 90] r2 = r0[r0]
+    -- [Line 90] FOR loop init r0, goto l224
+    -- [Line 91] r0["target"] = r2
+    -- [Line 92] UPVAL(u0) = r3
+    -- [Line 92] r3 = r2[r2]
+    -- [Line 93] r3 = r0[r0]
+    -- [Line 93] goto offset 256
+    -- [Line 94] r4 = true ; skip next
+    -- [Line 94] r4 = r4["Manual"]
+    -- [Line 94] r4 = r0[r0]
+    -- [Line 94] goto offset 256
+    -- [Line 94] r4 = -r0
+    -- [Line 94] r4 = r4["engine"]
+    -- [Line 94] UPVAL(u4) = r4
+    -- [Line 94] r4 = r2[r2]
+    -- [Line 94] r4 = r0 ^ r0
+    -- [Line 94] goto offset 256
+    -- [Line 95] r4 = false ; skip next
+    -- [Line 95] FOR loop step r4, goto -128758
+    -- [Line 95] if r2 then r4 = r2 else skip next
+    -- [Line 95] goto offset 256
+    -- [Line 97] r4 = false ; skip next
+    -- [Line 97] FOR loop step r4, goto -128757
+    -- [Line 97] r6 = r3 * r0
+    -- [Line 97] if not r7 then skip next
+    -- [Line 97] if r4 then r4 = r4 else skip next
+    -- [Line 98] goto offset 256
+    -- [Line 99] r4 = false ; skip next
+    -- [Line 99] r4 = true ; skip next
+    -- [Line 99] r4 = r0 ^ r0
+    -- [Line 99] goto offset 256
+    -- [Line 99] r4 = -r0
+    -- [Line 99] r4 = r4["engine"]
+    -- [Line 99] UPVAL(u4) = r4
+    -- [Line 99] r4 = r2[r2]
+    -- [Line 99] r4 = r0[r0]
+    -- [Line 99] goto offset 256
+    -- [Line 100] r4 = false ; skip next
+    -- [Line 100] FOR loop step r4, goto -128745
+    -- [Line 100] if r2 then r4 = r2 else skip next
+    -- [Line 101] goto offset 256
+    -- [Line 102] r3 = false ; skip next
+    -- [Line 102] r3 = true ; skip next
+    -- [Line 102] r3 = r0 ^ r0
+    -- [Line 102] goto offset 256
+    -- [Line 102] r3 = -r0
+    -- [Line 102] r3 = r3["engine"]
+    -- [Line 102] UPVAL(u3) = r3
+    -- [Line 102] r3 = r2[r2]
+    -- [Line 102] r3 = r0 ^ r0
+    -- [Line 102] goto offset 256
+    -- [Line 103] r3 = false ; skip next
+    -- [Line 103] FOR loop step r3, goto -129257
+    -- [Line 103] if r2 then r3 = r2 else skip next
+    -- [Line 104] goto offset 256
+    -- [Line 106] UPVAL(u0) = r2
+    -- [Line 106] if r2 then r2 = r2 else skip next
+    -- [Line 107] r3 = not r4
+    -- [Line 108] r2 = r0[r0]
+    -- [Line 108] goto offset 256
+    -- [Line 109] r0["target"] = r2
+    -- [Line 110] FOR loop step r5, goto -130809
+    -- [Line 110] if r2 then r5 = r2 else skip next
+    -- [Line 110] if not r4 then skip next
+    -- [Line 110] r3 = r5 * r0
+    -- [Line 111] r3 = r0 ^ r0
+    -- [Line 111] FOR loop init r0, goto l270
+    -- [Line 112] r5 = r3["info"]
+    -- [Line 112] r5 = true ; skip next
+    -- [Line 112] r5 = r0 ^ r0
+    -- [Line 112] FOR loop init r0, goto l264
+    -- [Line 112] if not r5 then skip next
+    -- [Line 112] r5 = true ; skip next
+    -- [Line 112] FOR loop step r5, goto -128252
+    -- [Line 112] if r2 then r5 = r2 else skip next
+    -- [Line 112] r5 = r0[r0]
+    -- [Line 112] FOR loop init r0, goto l264
+    -- [Line 113] r5 = r0["owner"]
+    -- [Line 113] UPVAL(u5) = r5
+    -- [Line 113] r5 = r2[r1]
+    -- [Line 113] FOR loop init r0, goto l316
+    -- [Line 115] r5 = r0["owner"]
+    -- [Line 115] UPVAL(u5) = r5
+    -- [Line 115] if not r7 then skip next
+    -- [Line 115] r8 = r2 * r0
+    -- [Line 115] r5 = r4[r1]
+    -- [Line 116] FOR loop init r0, goto l316
+    -- [Line 117] r5 = r0["owner"]
+    -- [Line 117] r5 = r5["controlledTarget"]
+    -- [Line 117] r5 = r0[r0]
+    -- [Line 117] FOR loop init r0, goto l280
+    -- [Line 117] if not r5 then skip next
+    -- [Line 117] r5 = true ; skip next
+    -- [Line 117] FOR loop step r5, goto -128252
+    -- [Line 117] if r2 then r5 = r2 else skip next
+    -- [Line 117] r5 = r0 ^ r0
+    -- [Line 117] FOR loop init r0, goto l316
+    -- [Line 118] FOR loop step r5, goto -130795
+    -- [Line 118] r7 = r2 * r0
+    -- [Line 118] if not r8 then skip next
+    -- [Line 118] if r4 then r5 = r4 else skip next
+    -- [Line 119] goto offset 256
+    -- [Line 120] r5 = false ; skip next
+    -- [Line 120] r5 = r0[r0]
+    -- [Line 120] goto offset 256
+    -- [Line 121] r5 = false ; skip next
+    -- [Line 121] r5 = r5["controlledTarget"]
+    -- [Line 121] r5 = r0[r0]
+    -- [Line 121] FOR loop init r0, goto l298
+    -- [Line 121] if not r5 then skip next
+    -- [Line 121] r5 = true ; skip next
+    -- [Line 121] FOR loop step r5, goto -128252
+    -- [Line 121] if r2 then r5 = r2 else skip next
+    -- [Line 121] r5 = r0[r0]
+    -- [Line 121] FOR loop init r0, goto l316
+    -- [Line 122] r5 = r0["walkTo"]
+    -- [Line 122] r6 = false ; skip next
+    -- [Line 122] if not r7 then skip next
+    -- [Line 122] if r3 then r5 = r3 else skip next
+    -- [Line 123] goto offset 256
+    -- [Line 124] r5 = false ; skip next
+    -- [Line 124] r5 = true ; skip next
+    -- [Line 124] r5 = r0 ^ r0
+    -- [Line 124] goto offset 256
+    -- [Line 124] r5 = -r0
+    -- [Line 124] r5 = r5["engine"]
+    -- [Line 124] UPVAL(u5) = r5
+    -- [Line 124] r5 = r2[r2]
+    -- [Line 124] r5 = r0 ^ r0
+    -- [Line 124] goto offset 256
+    -- [Line 125] r5 = false ; skip next
+    -- [Line 125] FOR loop step r5, goto -128233
+    -- [Line 125] if r2 then r5 = r2 else skip next
+    -- [Line 128] op49 r0, r1, r0
+
+function main/f4()
+    -- local variable p0 defined
+    -- local variable p1 defined
+    -- local variable x defined
+    -- local variable y defined
+    -- local variable distanceSQ defined
+    -- [Line 131] r2 = false ; skip next
+    -- [Line 131] r3 = r1[1]
+    -- [Line 131] r2 = r2 + r3
+    -- [Line 132] r3 = r0[2]
+    -- [Line 132] r4 = true ; skip next
+    -- [Line 132] op39 r3, r3, r4
+    -- [Line 133] r4 = r2 % r2
+    -- [Line 133] r5 = r3 % r3
+    -- [Line 133] r4 = r4
+    -- [Line 134] op49 r4, r2, r0
+    -- [Line 135] CALL r0 (args: 0, returns: var)
+
+function main/f5()
+    -- local variable self defined
+    -- local variable owner defined
+    -- local variable (for generator) defined
+    -- local variable (for state) defined
+    -- local variable (for control) defined
+    -- local variable unit defined
+    -- local variable target defined
+    -- local variable minDistanSQ defined
+    -- local variable ft defined
+    -- local variable mdst defined
+    -- local variable flst defined
+    -- local variable rect_cut defined
+    -- [Line 137] r1 = false ; skip next
+    -- [Line 138] r2 = r1["taunter"]
+    -- [Line 138] r2 = r0 ^ r0
+    -- [Line 138] goto offset 256
+    -- [Line 139] r2 = true ; skip next
+    -- [Line 139] if not r3 then skip next
+    -- [Line 139] r4 = true ; skip next
+    -- [Line 139] r5 = r1["taunter"]
+    -- [Line 139] r5 = true ; skip next
+    -- [Line 139] r3 = r3[r0]
+    -- [Line 139] CALL r2 (args: var, returns: var)
+    -- [Line 141] r2 = r1["detaunter"]
+    -- [Line 141] r2 = r0[r0]
+    -- [Line 141] FOR loop init r0, goto l22
+    -- [Line 142] r2 = r1["detaunter"]
+    -- [Line 142] r3 = -r0
+    -- [Line 142] r4 = r1["position"]
+    -- [Line 142] r5 = true ; skip next
+    -- [Line 142] r5 = r5["position"]
+    -- [Line 142] if r3 then r3 = r3 else skip next
+    -- [Line 142] op49 r2, r0, r0
+    -- [Line 144] r2 = true ; skip next
+    -- [Line 144] r2 = true ; skip next
+    -- [Line 144] r2 = r0 ^ r0
+    -- [Line 144] FOR loop init r0, goto l47
+    -- [Line 145] if not r2 then skip next
+    -- [Line 145] r2 = true ; skip next
+    -- [Line 145] FOR loop step r2, goto -129784
+    -- [Line 145] r4 = false ; skip next
+    -- [Line 145] r4 = r4["foecamp"]
+    -- [Line 145] if r3 then r2 = r3 else skip next
+    -- [Line 145] goto offset 256
+    -- [Line 146] r1 = _G[k2561]
+    -- [Line 146] goto offset 256
+    -- [Line 146] r6 = true ; skip next
+    -- [Line 146] r6 = r6["derangedTarget"]
+    -- [Line 146] r6 = r0[r0]
+    -- [Line 146] goto offset 256
+    -- [Line 147] r6 = r5 * r0
+    -- [Line 147] if not r7 then skip next
+    -- [Line 147] r8 = true ; skip next
+    -- [Line 147] r9 = r5["position"]
+    -- [Line 147] if r3 then r7 = r3 else skip next
+    -- [Line 147] op49 r6, r0, r0
+    -- [Line 145] settable r2, r0, r1
+    -- [Line 148] FOR loop init r0, goto l33
+    -- [Line 151] FOR loop step r2, goto -130805
+    -- [Line 151] r2 = r2[r3]
+    -- [Line 152] r4 = r2 * r0
+    -- [Line 152] if not r5 then skip next
+    -- [Line 153] op63 r6, r0, r0
+    -- [Line 154] if not r7 then skip next
+    -- [Line 154] r7 = true ; skip next
+    -- [Line 154] r7 = r7["rect_cut"]
+    -- [Line 155] r8 = true ; skip next
+    -- [Line 155] r8 = r1[r2]
+    -- [Line 155] r8 = r0[r1]
+    -- [Line 155] FOR loop init r0, goto l78
+    -- [Line 156] r8 = r7["checkSameArea"]
+    -- [Line 156] r9 = r1 * r0
+    -- [Line 156] if not r10 then skip next
+    -- [Line 156] if r3 then r8 = r3 else skip next
+    -- [Line 156] r8 = r0 ^ r1
+    -- [Line 156] goto offset 256
+    -- [Line 157] r8 = true ; skip next
+    -- [Line 157] r6[r8] = True
+    -- [Line 158] UPVAL(u0) = r8
+    -- [Line 158] if not r10 then skip next
+    -- [Line 158] if r3 then r8 = r3 else skip next
+    -- [Line 158] if not r3 then skip next
+    -- [Line 158] r2 = r8 * r0
+    -- [Line 159] r2 = r0 ^ r1
+    -- [Line 159] goto offset 255
+    -- [Line 160] r2 = r4 * r0
+    -- [Line 161] if not r5 then skip next
+    -- [Line 162] FOR loop init r0, goto l78
+    -- [Line 163] goto offset 255
+    -- [Line 166] r8 = r2 * r0
+    -- [Line 166] if not r9 then skip next
+    -- [Line 166] CALL r8 (args: 2, returns: var)
+    -- [Line 167] op49 r0, r1, r0
+
+function main/f6()
+    -- local variable self defined
+    -- local variable ftList defined
+    -- local variable owner defined
+    -- local variable minDistanSQ defined
+    -- local variable target defined
+    -- local variable (for generator) defined
+    -- local variable (for state) defined
+    -- local variable (for control) defined
+    -- local variable unit defined
+    -- local variable distanceSQ defined
+    -- [Line 170] r1 = r0 ^ r1
+    -- [Line 170] goto offset 256
+    -- [Line 170] op63 r2, r0, r0
+    -- [Line 170] if not r1 then skip next
+    -- [Line 171] r2 = r0["owner"]
+    -- [Line 172] r3 = r0 - r1
+    -- [Line 172] r3 = r3["huge"]
+    -- [Line 173] r4 = not r4
+    -- [Line 174] if not r5 then skip next
+    -- [Line 174] r5 = true ; skip next
+    -- [Line 174] FOR loop step r5, goto -128251
+    -- [Line 174] r7 = false ; skip next
+    -- [Line 174] r7 = r7["foecamp"]
+    -- [Line 174] if r3 then r5 = r3 else skip next
+    -- [Line 174] goto offset 256
+    -- [Line 175] r1 = _G[k4098]
+    -- [Line 175] goto offset 256
+    -- [Line 175] r9 = true ; skip next
+    -- [Line 175] r9 = r9["untargetable"]
+    -- [Line 175] r9 = r0[r1]
+    -- [Line 175] FOR loop init r0, goto l47
+    -- [Line 175] r9 = r8["buffManager"]
+    -- [Line 175] r9 = true ; skip next
+    -- [Line 175] r9 = r0 ^ r1
+    -- [Line 175] goto offset 256
+    -- [Line 175] r9 = true ; skip next
+    -- [Line 175] r9 = r0 ^ r0
+    -- [Line 175] goto offset 256
+    -- [Line 175] r9 = true ; skip next
+    -- [Line 175] r9 = r9["camp"]
+    -- [Line 175] r10 = false ; skip next
+    -- [Line 175] r10 = r10["camp"]
+    -- [Line 175] r1 = _G[k4618]
+    -- [Line 175] goto offset 256
+    -- [Line 176] r9 = -r1
+    -- [Line 176] r10 = r2["position"]
+    -- [Line 176] r11 = true ; skip next
+    -- [Line 176] r9 = r3[r2]
+    -- [Line 177] op41 r0, r9, r3
+    -- [Line 177] goto offset 256
+    -- [Line 177] r10 = true ; skip next
+    -- [Line 177] r10 = r1[r10]
+    -- [Line 177] r10 = r0[r1]
+    -- [Line 177] FOR loop init r0, goto l47
+    -- [Line 178] if not r3 then skip next
+    -- [Line 179] r4 = r8 * r0
+    -- [Line 174] settable r5, r0, r1
+    -- [Line 181] FOR loop init r0, goto l16
+    -- [Line 183] if not r5 then skip next
+    -- [Line 183] r6 = r3 * r0
+    -- [Line 183] op49 r5, r3, r0
+    -- [Line 184] CALL r0 (args: 0, returns: var)
+
+function main/f7()
+    -- local variable self defined
+    -- local variable resWhy defined
+    -- local variable list defined
+    -- local variable (for index) defined
+    -- local variable (for limit) defined
+    -- local variable (for step) defined
+    -- local variable i defined
+    -- local variable skill defined
+    -- local variable res defined
+    -- local variable why defined
+    -- [Line 186] r1 = r0["owner"]
+    -- [Line 186] r1 = true ; skip next
+    -- [Line 186] op51 r0, k2, r1
+    -- [Line 186] FOR loop init r0, goto l7
+    -- [Line 187] r1 = not r1
+    -- [Line 187] CALL r1 (args: 1, returns: var)
+    -- [Line 189] r1 = not r1
+    -- [Line 190] r2 = false ; skip next
+    -- [Line 190] r2 = r2["skill_list"]
+    -- [Line 191] r3 = 1
+    -- [Line 191] gettable r4, r2, r0
+    -- [Line 191] r5 = 1
+    -- [Line 191] op55 r3, k0, r24
+    -- [Line 192] r7 = true ; skip next
+    -- [Line 193] FOR loop step r8, goto -130810
+    -- [Line 193] r10 = r7 * r0
+    -- [Line 193] r8 = r3[r3]
+    -- [Line 194] r0 = _G[k4870]
+    -- [Line 194] goto offset 256
+    -- [Line 195] extrabyte 75497550
+    -- [Line 197] r10 = r0["owner"]
+    -- [Line 197] r10 = true ; skip next
+    -- [Line 197] r10 = r0[r0]
+    -- [Line 197] FOR loop init r0, goto l36
+    -- [Line 197] if not r10 then skip next
+    -- [Line 197] r10 = true ; skip next
+    -- [Line 197] FOR loop step r10, goto -125686
+    -- [Line 197] if r2 then r10 = r2 else skip next
+    -- [Line 197] r10 = r0 ^ r0
+    -- [Line 197] FOR loop init r0, goto l36
+    -- [Line 197] r10 = r7["info"]
+    -- [Line 197] r10 = true ; skip next
+    -- [Line 197] r10 = r0[r0]
+    -- [Line 197] FOR loop init r0, goto l36
+    -- [Line 197] goto offset 256
+    -- [Line 198] r8 = r0[r0]
+    -- [Line 198] FOR loop init r0, goto l39
+    -- [Line 199] op49 r7, r2, r0
+    -- [Line 191] r3 = r255 / k229
+    -- [Line 202] r3 = not r3
+    -- [Line 202] if not r4 then skip next
+    -- [Line 202] CALL r3 (args: 2, returns: var)
+    -- [Line 203] op49 r0, r1, r0
+
+function main/f8()
+    -- local variable self defined
+    -- local variable dest defined
+    -- local variable why defined
+    -- local variable owner defined
+    -- local variable distanceSQ defined
+    -- [Line 206] r3 = r1["position"]
+    -- [Line 206] r3 = r0 ^ r0
+    -- [Line 206] goto offset 256
+    -- [Line 207] extrabyte 12582978
+    -- [Line 209] r3 = r0["owner"]
+    -- [Line 210] if not r4 then skip next
+    -- [Line 210] r4 = true ; skip next
+    -- [Line 210] if not r5 then skip next
+    -- [Line 210] r6 = true ; skip next
+    -- [Line 210] r4 = r3[r2]
+    -- [Line 211] r5 = true ; skip next
+    -- [Line 211] closure r5, f2820
+    -- [Line 211] self r0, r4, r5
+    -- [Line 211] goto offset 256
+    -- [Line 211] UPVAL(u3) = r5
+    -- [Line 211] r5 = r2[r2]
+    -- [Line 211] r5 = r0 ^ r0
+    -- [Line 211] goto offset 256
+    -- [Line 211] extrabyte -2147237856
+    -- [Line 213] r5 = r3["quartercircleList"]
+    -- [Line 213] r5 = r0 ^ r1
+    -- [Line 213] FOR loop init r0, goto l24
+    -- [Line 213] op63 r5, r0, r0
+    -- [Line 213] gettable r5, r5, r0
+    -- [Line 213] op41 r0, k7, r5
+    -- [Line 213] goto offset 256
+    -- [Line 213] r0 = _G[k1288]
+    -- [Line 213] goto offset 256
+    -- [Line 214] UPVAL(u3) = r5
+    -- [Line 214] if not r7 then skip next
+    -- [Line 214] if r3 then r5 = r3 else skip next
+    -- [Line 215] op49 r0, r1, r0
+    -- [Line 217] UPVAL(u3) = r5
+    -- [Line 217] r5 = r2[r1]
+    -- [Line 218] CALL r0 (args: 0, returns: var)
+    -- [Line 220] FOR loop step r5, goto -129270
+    -- [Line 220] r7 = r1 * r0
+    -- [Line 220] r5 = r3[r1]
+    -- [Line 221] CALL r0 (args: 0, returns: var)
+
+function main/f9()
+    -- local variable self defined
+    -- local variable skill defined
+    -- local variable reswhy defined
+    -- local variable cast defined
+    -- local variable why defined
+    -- [Line 225] r2 = -r0
+    -- [Line 225] r2 = r2["engine"]
+    -- [Line 225] UPVAL(u2) = r2
+    -- [Line 225] r2 = r2[r2]
+    -- [Line 225] r2 = r0[r0]
+    -- [Line 225] goto offset 256
+    -- [Line 225] r2 = false ; skip next
+    -- [Line 225] r2 = r2["camp"]
+    -- [Line 225] r3 = -r0
+    -- [Line 225] r3 = r3["emCampPlayer"]
+    -- [Line 225] r0 = _G[k1027]
+    -- [Line 225] goto offset 256
+    -- [Line 225] r2 = true ; skip next
+    -- [Line 225] r2 = r2["Atk Manual"]
+    -- [Line 225] r2 = r0 ^ r0
+    -- [Line 225] goto offset 256
+    -- [Line 226] vararg r2, 0
+    -- [Line 226] op49 r2, r2, r0
+    -- [Line 228] r2 = not r2
+    -- [Line 229] r3 = r1["is_update"]
+    -- [Line 229] r3 = r0[r0]
+    -- [Line 229] goto offset 256
+    -- [Line 229] r3 = false ; skip next
+    -- [Line 229] r3 = r0[r1]
+    -- [Line 229] FOR loop init r0, goto l30
+    -- [Line 229] r3 = r1["info"]
+    -- [Line 229] r3 = true ; skip next
+    -- [Line 229] r3 = r0 ^ r1
+    -- [Line 229] goto offset 256
+    -- [Line 230] UPVAL(u1) = r3
+    -- [Line 230] r5 = false ; skip next
+    -- [Line 230] op40 r6, r1, r0
+    -- [Line 230] if r4 then r3 = r4 else skip next
+    -- [Line 231] op44 r0, r4, k12
+    -- [Line 231] FOR loop init r0, goto l37
+    -- [Line 232] if not r2 then skip next
+    -- [Line 234] r3 = r0[r0]
+    -- [Line 234] goto offset 256
+    -- [Line 234] UPVAL(u1) = r5
+    -- [Line 234] r5 = r2[r2]
+    -- [Line 234] r5 = r0 ^ r0
+    -- [Line 234] goto offset 256
+    -- [Line 235] vararg r5, 1
+    -- [Line 235] op49 r5, r2, r0
+    -- [Line 238] vararg r3, 0
+    -- [Line 238] r4 = r2 * r0
+    -- [Line 238] op49 r3, r3, r0
+    -- [Line 239] CALL r0 (args: 0, returns: var)
+

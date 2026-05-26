@@ -1,0 +1,9 @@
+A:y
+actionWithTitle:style:handler
+alertControllerWithTitle:message:preferredStyle
+dataTaskWithRequest:completionHandler
+JSONObjectWithData:options:error
+pathForResource:ofType
+presentViewController:animated:completion
+setValue:forHTTPHeaderField
+stringWithContentsOfFile:encoding:error
